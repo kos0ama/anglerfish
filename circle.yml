@@ -34,10 +34,10 @@ deployment:
     branch: master
     commands:
       - DEPLOY_ENV=production npm run compile
-      - eb deploy
+      - eb deploy --profile default
 
   staging:
     branch: staging
     commands:
       - DEPLOY_ENV=staging npm run compile
-      - eb deploy
+      - eb deploy --profile default
