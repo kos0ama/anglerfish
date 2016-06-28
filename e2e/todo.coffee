@@ -37,6 +37,7 @@ describe('ToDoアプリシナリオテスト', ->
     expect(todoList.count()).toBe(3)
     expect(todoList.get(2).element(By.binding('todo.title')).getText()).toBe(title)
     expect(hasClass(todoList.get(2).element(By.model('todo.done')), 'ng-empty')).toBe(true)
+    expect(todoList.get(2).element(By.binding('todo.registeredAt')).getText()).toMatch(/^.*\d{4}\/\d{2}\/\d{2} \d{2}\:\d{2}$/)    
 
     expect(allCount.getText()).toBe('4')
     expect(remainingCount.getText()).toBe('3')

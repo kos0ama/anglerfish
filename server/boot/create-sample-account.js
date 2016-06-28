@@ -1,7 +1,7 @@
 var async = require('async');
 
 module.exports = function(app) {
-  var ds = app.dataSources.mysqlDs;
+  var ds = app.dataSources.db;
   var fns;
 
   if (process.env.NODE_ENV === 'production') {
@@ -68,16 +68,19 @@ module.exports = function(app) {
         {
           title: name + '-task1',
           done: false,
+          registeredAt: new Date(2016, 4-1, 1),
           accountId: account.id
         },
         {
           title: name + '-task2',
           done: true,
+          registeredAt: new Date(2016, 4-1, 1),
           accountId: account.id
         },
         {
           title: name + '-task3',
           done: false,
+          registeredAt: new Date(2016, 4-1, 1),
           accountId: account.id
         }
       ];
